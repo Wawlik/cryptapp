@@ -77,11 +77,9 @@ export default {
   },
   created () {
     axios.get('http://coins.jdevelop.com/dashboard').then(function (result) {
-      console.log(result.data)
       this.transactions = result.data.symbols
       this.gainLossData.data.push(result.data.total_return)
       this.gainLossData.data.push(result.data.total_spent)
-      console.log(this.transactions)
     })
   },
   data () {
@@ -107,7 +105,7 @@ export default {
         labels: ['Spent', 'Return'],
         datasets: [{
           backgroundColor: ['#9C252D', '#44920A'],
-          data: []
+          data: [100, 500]
         }]
       },
       transactions: [{

@@ -40,7 +40,6 @@
                 <div class="col-md-3 col-sm-3 col-xs-12">
                   <button :disabled="isLoading" class="btn btn-primary btn-block " @click="submit" type="button" data-dismiss="modal" aria-label="Close">
                     Create
-                    <!-- <i v-show="isLoading" class="fa fa-spinner spinner"></i> -->
                   </button>
                 </div>
                 </center>
@@ -76,12 +75,7 @@ export default {
   methods: {
     submit: function () {
       this.exchange.date = moment().format('YYYY-MM-DD H:mm')
-      console.log(this.exchange.date)
-      console.log(JSON.stringify(this.exchange))
       axios.put('http://coins.jdevelop.com/transfer', this.makeData(this.exchange))
-      .then(function (result) {
-        console.log(result)
-      })
     },
     makeData: function (data) {
       return JSON.stringify({

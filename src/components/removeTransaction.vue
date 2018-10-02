@@ -11,13 +11,11 @@
               <div class="col-md-3 ml-auto">
                 <button :disabled="isLoading" class="btn btn-primary btn-block" type="button" data-dismiss="modal" aria-label="Close" @click="deleteTransaction">
                   OK
-                  <!-- <i v-show="isLoading" class="fa fa-spinner spinner"></i> -->
                 </button>
               </div>
               <div class="col-md-3 mr-auto">
                 <button :disabled="isLoading" class="btn btn-default btn-block" type="button" data-dismiss="modal" aria-label="Close">
                   Cancel
-                  <!-- <i v-show="isLoading" class="fa fa-spinner spinner"></i> -->
                 </button>
               </div>
             </div>
@@ -41,9 +39,6 @@
     methods: {
       deleteTransaction: function () {
         axios.delete('http://coins.jdevelop.com/delete/' + this.id)
-        .then(function (response) {
-          console.log(response)
-        })
       }
     }
   }
